@@ -1,5 +1,6 @@
 package com.example.todoconexaotqi.ui.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -7,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.todoconexaotqi.R
 import com.example.todoconexaotqi.databinding.ActivityMainBinding
+import com.example.todoconexaotqi.ui.add.AddTaskActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         fab_add.setOnClickListener {
-            viewModel.add()
+            startActivity(Intent(this, AddTaskActivity::class.java))
         }
     }
 }
